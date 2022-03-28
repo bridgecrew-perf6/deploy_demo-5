@@ -1,5 +1,4 @@
 version: '3.4'
-
 services:
   deploydemo:
     image: deploydemo
@@ -8,5 +7,6 @@ services:
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
+      VITE_APP_ID: cac
     ports:
       - 80:4173
