@@ -1,7 +1,16 @@
 FROM node:lts-alpine
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install 
+
+RUN npm install     
+
 COPY . .
-EXPOSE 3000
-CMD ["npm","run","dev"]
+# copy source code 
+
+
+RUN npm run build
+
+EXPOSE 4173
+# expose port
+
+CMD ["npm","run","preview"]
